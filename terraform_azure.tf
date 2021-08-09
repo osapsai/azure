@@ -129,17 +129,16 @@ resource "random_id" "randomId" {
 }
 
 # Create storage account for boot diagnostics
-resource "azurerm_storage_account" "mystorageaccount" {
-    name                        = "diag${random_id.randomId.hex}"
-    resource_group_name         = azurerm_resource_group.myterraformgroup.name
-    location                    = azurerm_resource_group.myterraformgroup.location
-    account_tier                = "Premium"
-    account_replication_type    = "LRS"
-
-    tags = {
-        environment = "Terraform Demo"
-    }
-}
+#resource "azurerm_storage_account" "mystorageaccount" {
+#    name                        = "diag${random_id.randomId.hex}"
+#    resource_group_name         = azurerm_resource_group.myterraformgroup.name
+#    location                    = azurerm_resource_group.myterraformgroup.location
+#    account_tier                = "Premium"
+#    account_replication_type    = "LRS"
+#    tags = {
+#        environment = "Terraform Demo"
+#    }
+#}
 
 # Create (and display) an SSH key
 resource "tls_private_key" "example_ssh" {
