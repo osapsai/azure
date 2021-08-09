@@ -133,7 +133,7 @@ resource "azurerm_storage_account" "mystorageaccount" {
     name                        = "diag${random_id.randomId.hex}"
     resource_group_name         = azurerm_resource_group.myterraformgroup.name
     location                    = azurerm_resource_group.myterraformgroup.location
-    account_tier                = "Standard"
+    account_tier                = "Premium"
     account_replication_type    = "LRS"
 
     tags = {
@@ -157,7 +157,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     location              = azurerm_resource_group.myterraformgroup.location
     resource_group_name   = azurerm_resource_group.myterraformgroup.name
     network_interface_ids = [azurerm_network_interface.myterraformnic.id]
-    size                  = "Standard_DS1_v2"
+    size                  = "Standard_B1s"
 
     os_disk {
         name              = "myOsDisk"
