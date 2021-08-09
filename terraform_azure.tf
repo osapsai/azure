@@ -133,7 +133,7 @@ resource "azurerm_storage_account" "mystorageaccount" {
     name                        = "diag${random_id.randomId.hex}"
     resource_group_name         = azurerm_resource_group.myterraformgroup.name
     location                    = azurerm_resource_group.myterraformgroup.location
-    account_tier                = "Standard"
+    account_tier                = "Premium"
     account_replication_type    = "LRS"
 
     tags = {
@@ -162,7 +162,9 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     os_disk {
         name              = "myOsDisk"
         caching           = "ReadWrite"
-        storage_account_type = "Standard_LRS"
+        storage_account_type = "Premium_LRS"
+        disk_size_gb      = 32
+        caching           = none
     }
 
     source_image_reference {
