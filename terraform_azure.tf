@@ -179,7 +179,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     admin_ssh_key {
         username       = "azureuser"
 #        public_key     = file("~/.ssh/id_rsa.pub")
-        public_key     = "var.ssh_key"
+        public_key     = var.ssh_key
     }
 
     boot_diagnostics {
