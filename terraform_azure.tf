@@ -161,10 +161,10 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
 
     os_disk {
         name              = "myOsDisk"
-        caching           = "ReadWrite"
+#        caching           = "ReadWrite"
+        caching           = none
         storage_account_type = "Premium_LRS"
         disk_size_gb      = 32
-        caching           = none
     }
 
     source_image_reference {
