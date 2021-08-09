@@ -1,4 +1,4 @@
-# Configure the Microsoft Azure Provider
+# Configure the Microsoft Azure Provider 
 variable "my_client_secret" {
 }
 variable "my_subscription_id" {
