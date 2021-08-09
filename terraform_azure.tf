@@ -14,7 +14,8 @@ provider "azurerm" {
 # Create a resource group if it doesn't exist
 resource "azurerm_resource_group" "myterraformgroup" {
     name     = "myResourceGroup"
-    location = "West Europe"
+#    location = "West Europe"
+    location = var.mylocation
 
     tags = {
         environment = "Terraform Demo"
@@ -160,7 +161,8 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
 
     admin_ssh_key {
         username       = "azureuser"
-        public_key     = file("~/.ssh/id_rsa.pub")
+#        public_key     = file("~/.ssh/id_rsa.pub")
+        public_key     = var.ssh-key
     }
 
     boot_diagnostics {
