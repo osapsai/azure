@@ -163,7 +163,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
 #        caching           = "ReadWrite"
         caching           = "None"
         storage_account_type = "Premium_LRS"
-        disk_size_gb      = 32
+        disk_size_gb      = 64
     }
 
     source_image_reference {
