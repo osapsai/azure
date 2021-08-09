@@ -1,4 +1,12 @@
 # Configure the Microsoft Azure Provider
+variable "my_client_secret" {
+}
+variable "my_subscription_id" {
+}
+variable "my_client_id" {
+}
+variable "my_tenant_id" {
+}
 terraform {
   required_providers {
     azurerm = {
@@ -9,11 +17,15 @@ terraform {
 }
 provider "azurerm" {
   features {}
+  subscription_id = var.my_subscription_id
+  client_id       = var.my_client_id
+  client_secret   = var.my_client_secret
+  tenant_id       = var.my_tenant_id
 }
 variable "mylocation" {
   type = string
 }
-variable "ssh-key" {
+variable "ssh_key" {
   type = string
 }
 # Create a resource group if it doesn't exist
@@ -167,7 +179,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     admin_ssh_key {
         username       = "azureuser"
 #        public_key     = file("~/.ssh/id_rsa.pub")
-        public_key     = var.ssh-key
+        public_key     = var.ssh_key
     }
 
     boot_diagnostics {
