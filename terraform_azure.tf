@@ -30,7 +30,7 @@ variable "ssh_key" {
 }
 # Create a resource group if it doesn't exist
 resource "azurerm_resource_group" "myterraformgroup" {
-    name     = "myResourceGroup"
+    name     = "myTeraformResourceGroup"
 #    location = "West Europe"
     location = var.mylocation
 
@@ -180,7 +180,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     admin_ssh_key {
         username       = "azureuser"
 #        public_key     = file("~/.ssh/id_rsa.pub")
-        public_key     = var.ssh_key
+        public_key     = var.ssh_user_key
     }
 
     #boot_diagnostics {
