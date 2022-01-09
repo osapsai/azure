@@ -28,6 +28,9 @@ variable "mylocation" {
 variable "ssh_key" {
   type = string
 }
+variable "ssh_user_key" {
+  type = string
+}
 # Create a resource group if it doesn't exist
 resource "azurerm_resource_group" "myterraformgroup" {
     name     = "myTeraformResourceGroup"
